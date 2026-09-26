@@ -20,3 +20,4 @@ html,body{overscroll-behavior:none}
 }
 @media (pointer:coarse) and (max-width:560px){.virtual-stick{width:116px;height:116px}.virtual-stick[data-role="move"]{left:18px;bottom:20px}.virtual-stick[data-role="aim"]{right:18px;bottom:20px}.stick-knob{width:52px;height:52px;left:32px;top:32px}.mobile-actions{right:16px;bottom:150px;transform:scale(.9);transform-origin:bottom right}.mobile-status{right:16px;top:58px}.hud-top #hudScore{display:none}}
 @media (orientation:landscape) and (pointer:coarse){.virtual-stick[data-role="move"]{bottom:16px}.virtual-stick[data-role="aim"]{bottom:16px}.mobile-actions{bottom:138px}.hud-bottom{bottom:8px}.mobile-status{top:50px}}
+
