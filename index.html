@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>KURUKSHETRA — स्वागत है युद्ध में</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Noto+Sans+Devanagari:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="grain"></div>
+  <main class="screen">
+    <header class="brand">
+      <div class="crest">K</div>
+      <div>
+        <h1>KURUKSHETRA</h1>
+        <p>स्वागत है युद्ध में</p>
+      </div>
+      <div class="status"><span></span> ONLINE PROTOTYPE</div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow">THE BATTLEFIELD AWAITS</div>
+        <h2>Enter the<br><em>Kurukshetra.</em></h2>
+        <p class="intro">A fast, original 2D multiplayer arena inspired by the visual language of ancient Indian fantasy.</p>
+        <div class="actions">
+          <button class="primary" id="createBtn">CREATE ROOM <b>→</b></button>
+          <button class="secondary" id="joinBtn">JOIN ROOM</button>
+        </div>
+        <button class="text-btn" id="publicBtn">VIEW PUBLIC ROOMS <span>↗</span></button>
+      </div>
+
+      <div class="battlefield" aria-label="Original battlefield illustration">
+        <div class="sun"></div>
+        <div class="mountain m1"></div><div class="mountain m2"></div>
+        <div class="platform p1"></div><div class="platform p2"></div><div class="platform p3"></div>
+        <div class="warrior">
+          <div class="cape"></div><div class="head"></div><div class="body"></div>
+          <div class="bow"></div><div class="leg l"></div><div class="leg r"></div>
+        </div>
+        <div class="dust d1"></div><div class="dust d2"></div>
+        <div class="label">ORIGINAL<br>WARRIORS</div>
+      </div>
+    </section>
+
+    <section class="panels">
+      <button class="panel" id="settingsBtn"><span>⚙</span><div><strong>SETTINGS</strong><small>Audio · Controls · Display</small></div><b>›</b></button>
+      <div class="panel roster"><span>✦</span><div><strong>8 ORIGINAL WARRIORS</strong><small>Dhanvi · Veer · Mahaveer · Agniveer · Vanrakshak · Rajveer · Sharang · Ketu</small></div></div>
+      <div class="panel network"><span>◉</span><div><strong>ONLINE MULTIPLAYER</strong><small>Rooms · approval · real-time battles</small></div></div>
+    </section>
+  </main>
+
+  <div id="gameRoot" class="game-root hidden">
+  <canvas id="gameCanvas"></canvas>
+  <div class="game-hud">
+    <div class="hud-top"><div class="hud-brand">KURUKSHETRA</div><div id="timer">05:00</div><div id="hudScore">0 KILLS</div></div>
+    <div id="crosshair" class="crosshair"></div>
+    <div class="hud-bottom"><div><span class="hud-label">HEALTH</span><div class="healthbar"><i id="healthFill"></i></div><strong id="healthText">100 / 100</strong></div><div class="weapon-hud"><span id="weaponName">धनुष</span><b id="ammo">8 / 8</b><small id="powerState"></small><small id="reloadState"></small></div></div>
+    <div id="countdown" class="countdown hidden"></div>
+    <div id="deathBanner" class="death-banner hidden">YOU FELL IN BATTLE</div>
+    <div id="finishPanel" class="finish-panel hidden"></div>
+    <div id="scoreboard" class="scoreboard hidden"><div class="score-head"><b>PLAYER</b><b>KILLS</b><b>DEATHS</b><b>SCORE</b></div><div id="scoreRows"></div></div>
+    <div class="game-help">WASD MOVE · SPACE JUMP · MOUSE AIM · LMB ATTACK · 1/2/3 WEAPON · Q POWER · R RELOAD · TAB SCOREBOARD · ESC MENU</div>
+    <div id="mobileControls" class="mobile-controls hidden" aria-label="Mobile game controls">
+      <div id="moveStick" class="virtual-stick" data-role="move"><div class="stick-ring"></div><div class="stick-knob"></div></div>
+      <div id="aimStick" class="virtual-stick aim-stick" data-role="aim"><div class="stick-ring"></div><div class="stick-knob"></div></div>
+      <div class="mobile-actions">
+        <button class="touch-btn fire" id="fireBtn">FIRE</button>
+        <button class="touch-btn jump" id="jumpBtn">JUMP</button>
+        <button class="touch-btn reload" id="reloadBtn">RELOAD</button>
+        <button class="touch-btn weapon" id="weaponBtn">WEAPON</button>
+        <button class="touch-btn power" id="powerBtn">POWER</button>
+      </div>
+      <div class="mobile-status" id="mobileStatus">TOUCH CONTROLS</div>
+    </div>
+  </div>
+</div>
+
+<div class="modal hidden" id="modal">
+    <div class="modal-card">
+      <button class="close" id="closeModal">×</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+<script src="/socket.io/socket.io.js"></script><script src="app.js"></script>
+</body>
+</html>
